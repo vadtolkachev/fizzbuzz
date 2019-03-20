@@ -3,11 +3,13 @@
 
 void fizzbuzz(std::vector<std::string> &input, VError *checkErr)
 {
+	bool isDevByThree;
+	bool isDevByFive;
+	VError checkErr2;
 
 	for(long unsigned i = 0; i < input.size(); i++)
 	{
-		VError checkErr2;
-		bool isDevByThree = isDevideByThree(input[i], &checkErr2);
+		isDevByThree = isDevidedByThree(input[i], &checkErr2);
 		if((checkErr2 != SUCCESS))
 		{
 			if(checkErr)
@@ -15,13 +17,7 @@ void fizzbuzz(std::vector<std::string> &input, VError *checkErr)
 			return;
 		}
 
-		bool isDevByFive = isDevideByFive(input[i], &checkErr2);
-		if((checkErr2 != SUCCESS))
-		{
-			if(checkErr)
-				*checkErr = checkErr2;
-			return;
-		}
+		isDevByFive = isDevidedByFive(input[i]);
 
 		if(isDevByThree && isDevByFive)
 		{
@@ -42,7 +38,7 @@ void fizzbuzz(std::vector<std::string> &input, VError *checkErr)
 }
 
 
-bool isDevideByThree(const std::string &str, VError *checkErr)
+bool isDevidedByThree(const std::string &str, VError *checkErr)
 {
 	unsigned long sum = 0;
 	for(unsigned long i = 0; i < str.size(); i++)
@@ -55,9 +51,8 @@ bool isDevideByThree(const std::string &str, VError *checkErr)
 			return false;
 		}
 
-		sum *= 10;
 		sum += static_cast<unsigned long>(str[i]) - '0';
-		
+
 		if(sum == 9)
 			sum = 0;
 		
@@ -65,11 +60,12 @@ bool isDevideByThree(const std::string &str, VError *checkErr)
 			sum -= 6;
 
 		if(sum >= 3)
-			sum -= 3;
+			sum -= 3;	
 	}
 
 	if(checkErr)
 		*checkErr = SUCCESS;
+
 
 	if(!sum)
 		return true;
@@ -78,9 +74,8 @@ bool isDevideByThree(const std::string &str, VError *checkErr)
 }
 
 
-bool isDevideByFive(const std::string &str, VError *checkErr)
+bool isDevidedByFive(const std::string &str, VError *checkErr)
 {	
-	unsigned long sum = 0;
 	for(unsigned long i = 0; i < str.size(); i++)
 	{
 		if(str[i] < '0' || str[i] >'9')
@@ -90,18 +85,13 @@ bool isDevideByFive(const std::string &str, VError *checkErr)
 			
 			return false;
 		}
-
-		sum *= 10;
-		sum += static_cast<unsigned long>(str[i]) - '0';
-		
-		if(sum >= 5)
-			sum -= 5;
 	}
 
 	if(checkErr)
 		*checkErr = SUCCESS;
 
-	if(!sum)
+	char numb =str[str.size()-1];
+	if(numb == '5' || numb == '0')
 		return true;
 
 	return false;

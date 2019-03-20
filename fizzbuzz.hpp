@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <iostream>
 
 enum VError
 {
@@ -10,5 +11,5 @@ enum VError
 
 
 void fizzbuzz(std::vector<std::string> &input, VError *checkErr = nullptr);
-bool isDevideByThree(const std::string &str, VError *checkErr = nullptr);
-bool isDevideByFive(const std::string &str, VError *checkErr = nullptr);
+bool isDevidedByThree(const std::string &str, VError *checkErr = nullptr);
+bool isDevidedByFive(const std::string &str, VError *checkErr = nullptr);
