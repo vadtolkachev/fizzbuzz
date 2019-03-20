@@ -96,3 +96,15 @@ bool isDevidedByFive(const std::string &str, VError *checkErr)
 
 	return false;
 }
+
+
+std::ostream &operator<<(std::ostream &os, const VError &err)
+{
+	if(err == WRONG_INPUT_ERR)
+		os << "WRONG_INPUT_ERR";
+	else
+		os << "SUCCESS";
+
+
+	return os;
+}

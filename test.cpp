@@ -18,7 +18,7 @@ int main()
 
 	fizzbuzz(vec1, &checkErr);
 	UNITTEST(checkErr, ==, SUCCESS);
-	for(int i = 0; i < vec1.size(); i++)
+	for(unsigned long i = 0; i < vec1.size(); i++)
 	{
 		UNITTEST(vec1[i], ==, ans1[i]);
 	}
@@ -34,7 +34,7 @@ int main()
 
 	fizzbuzz(vec3, &checkErr);
 	UNITTEST(checkErr, ==, SUCCESS);
-	for(int i = 0; i < vec3.size(); i++)
+	for(unsigned long i = 0; i < vec3.size(); i++)
 	{
 		UNITTEST(vec3[i], ==, ans3[i]);
 	}

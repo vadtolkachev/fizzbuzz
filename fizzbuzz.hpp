@@ -13,3 +13,4 @@ enum VError
 void fizzbuzz(std::vector<std::string> &input, VError *checkErr = nullptr);
 bool isDevidedByThree(const std::string &str, VError *checkErr = nullptr);
 bool isDevidedByFive(const std::string &str, VError *checkErr = nullptr);
+std::ostream &operator<<(std::ostream &os, const VError &err);
