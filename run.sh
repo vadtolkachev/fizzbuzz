@@ -1,3 +1,3 @@
 ./test.x
-lcov --capture --directory . --output-file cov.info
+lcov --no-external --capture --directory . --output-file cov.info
 genhtml cov.info --output-directory covinfo
