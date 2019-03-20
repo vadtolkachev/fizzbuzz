@@ -1,3 +1,3 @@
-valgrind --tool=memcheck --leak-check=full --log-file=valgrind_info.log ./test.x
-lcov --capture --directory . --output-file VHashTable.info
-genhtml VHashTable.info --output-directory covinfo
+./test.x
+lcov --capture --directory . --output-file cov.info
+genhtml cov.info --output-directory covinfo

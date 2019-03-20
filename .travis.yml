@@ -1,0 +1,22 @@
+language: cpp
+
+compiler: g++-7
+
+cache:
+  apt: true
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-7
+    - g++-7-multilib
+    - lcov
+
+script:
+  - make
+  - ./run.sh
+
+sudo: false
+
