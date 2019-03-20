@@ -105,6 +105,5 @@ std::ostream &operator<<(std::ostream &os, const VError &err)
 	else
 		os << "SUCCESS";
 
-
 	return os;
 }

@@ -25,12 +25,14 @@ int main()
 
 	fizzbuzz(vec2, &checkErr);
 	UNITTEST(checkErr, ==, WRONG_INPUT_ERR);
+	std::cout << checkErr << std::endl;
 
 	isDevidedByFive(vec2[0], &checkErr);	
 	UNITTEST(checkErr, ==, WRONG_INPUT_ERR);
 
 	isDevidedByFive(vec2[1], &checkErr);	
 	UNITTEST(checkErr, ==, SUCCESS);
+	std::cout << checkErr << std::endl;
 
 	fizzbuzz(vec3, &checkErr);
 	UNITTEST(checkErr, ==, SUCCESS);
@@ -38,7 +40,6 @@ int main()
 	{
 		UNITTEST(vec3[i], ==, ans3[i]);
 	}
-
 
 	return 0;
 }
